@@ -1,7 +1,7 @@
 import os
 import PyInstaller.__main__
 import shutil
-from distutils.dir_util import copy_tree
+# from distutils.dir_util import copy_tree
 
 # Opticos Program Builder
 
@@ -38,7 +38,7 @@ for folder in folders:
     shutil.copytree(folder, f"dist/{program_name}_{version}/" + str(folder))
 
 print("Merging: Main...")
-copy_tree(f"dist/{program_name}/", f"dist/{program_name}_{version}/")
+shutil.copytree(f"dist/{program_name}/", f"dist/{program_name}_{version}/", dirs_exist_ok=True)
 
 #print("Merging: Service...")
 #copy_tree("dist/GWSL_service/", f"dist/GWSL_{version}/")

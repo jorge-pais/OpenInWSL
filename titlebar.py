@@ -1,4 +1,4 @@
-import win32con
+import win32.lib.win32con as win32con
 from ctypes import *
 import sys
 
